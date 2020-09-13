@@ -1,0 +1,14 @@
+<div class="container">
+    <div class="row">
+        <button (click)="createBox()">Create Box</button>
+        <div class="switch_box box_1">
+			<input type="checkbox" class="switch_1" [(ngModel)]="moveBox" (change)="onToggle($event)">
+        </div>
+        <div><b> Moving box using arrow keys</b></div>
+    </div>
+    <div class="container">
+        <div *ngIf= "counts.length" style="height: 450px; width: 600px;">
+                <div *ngFor = "let count of counts; let i = index;" class="square" id="box{{i}}" [style.z-index]="i"  (click)="onMove($event)" (keyup)="onMoveBox($event)" contenteditable="true"></div>
+            </div>
+    </div>
+</div>
