@@ -7,10 +7,6 @@ declare var $: any;
   styleUrls: ['./draw-square.component.css']
 })
 export class DrawSquareComponent implements OnInit,AfterViewInit {
-  // @ViewChild('myCanvas', { static: true })
-  // canvas: ElementRef<HTMLCanvasElement>;  
-  
-  // public ctx: CanvasRenderingContext2D;
   pos:any;
   counts:any = [];
   X:any=0;
@@ -24,25 +20,13 @@ export class DrawSquareComponent implements OnInit,AfterViewInit {
   }
 
   ngOnInit(): void {
-    // this.pos = 10;
 
   }
 
   createBox(){
-  //   // let zIndex = 10;
-  //   this.ctx = this.canvas.nativeElement.getContext('2d');
-  //     console.log(this.ctx);
-  
-  //   // this.ctx.globalCompositeOperation='source-over';
-  //   this.ctx.fillStyle = this.randomColor();
-  //   this.ctx.fillRect(10, this.pos, 100, 100);
-  //   this.ctx.fill();
-  //   this.pos = this.pos + 105;
-  //   this.count ++;
-  // this.highlightBox = false
+
   let elements = document.getElementsByClassName('highlightbox'); 
   if(elements.length){
-    // document.getElementsByClassName("highlightbox").classList.remove()
     console.log(document.getElementsByClassName('highlightbox'))
     elements[0].classList.remove('highlightbox');
 
@@ -53,9 +37,6 @@ export class DrawSquareComponent implements OnInit,AfterViewInit {
 
   }
 
-  // randomColor(){ 
-  //   return('#'+Math.floor(Math.random()*16777215).toString(16));
-  // }
 
   //move Boxes
   onMove(event){
@@ -113,9 +94,7 @@ deleteBox(e){
   }
 
   moveUp(e){
-    if($("#"+e.target.id).css("top") >= '0px'){
     $("#"+e.target.id).finish().animate({top:"-=50"})
-    }
   }
 
   moveDown(e){
